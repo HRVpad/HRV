@@ -1,4 +1,4 @@
 # HRV
 Heart Rate Variability Analysis Tool
 
-![](Figures/ECG filtering.png)
+![](https://raw.githubusercontent.com/HRVpad/HRV/master/Figures/ECG%20filtering.png)
