@@ -56,16 +56,23 @@ def signal(a1, sample_freq, runtime, sig):
     endtime = time.perf_counter() + runtime.value
     t = 0
     if len(sig) > 1:                            # if sig is a vector
+        import numpy as np
         while time.perf_counter()<=endtime:
-            a = sig[t]
+            start = time.perf_counter()
+            a = sig[t] + 300*np.sin(60*np.pi*t) + 50*np.random.rand()
             t += 1                              # next sample
             a1.append(a)                        # append the signal value
+            end = time.perf_counter()
+            codeTime = end - start
             sleeper(1/sample_freq.value)        # controlling the loop iteration time with the sampling frequency
     else:
         while time.perf_counter()<=endtime:
+            start = time.perf_counter()
             a = sig
             t += 1                              # next sample
             a1.append(a)                        # append the signal value
+            end = time.perf_counter()
+            codeTime = end - start
             sleeper(1/sample_freq.value)        # controlling the loop iteration time with the sampling frequency
 
 def filter(a1, a2, sample_freq):
@@ -75,7 +82,7 @@ def filter(a1, a2, sample_freq):
     #fil1 = [0.1, 0.2, 0.7, 0.8, 0.7, 0.6, 0.5] # FIR moving average
     fil1 = sc.firwin(7, [0.05, 25, 49, 50], fs=360, pass_zero=False)
     #c, d = sc.iirfilter(1, [0.5, 50], btype='band', rs=60, analog=False, ftype='cheby2', fs=360)
-    d = np.array([1, -0.7, 0.98, -0.2, 0.8, 0.4, 0.6]) # for IIR
+    d = np.array([1, -0.5, 0.98, -0.1, 0.8, 0.4, 0.6]) # for IIR
     while True:
         sleeper(1/sample_freq.value)
         a = np.dot(fil1,a1[-7:])/sum(abs(fil1))

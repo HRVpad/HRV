@@ -17,17 +17,17 @@ if __name__ == '__main__':
         directory = '../Data/100.csv'
 
         # Sampling and recording variables:
-        sample_freq = Value('i', 470)           # Actual sampling rate will be lower than this number
+        sample_freq = Value('i', 361)          
         b = Value('d',0)
-        runtime = Value('d',30)                 # Runs for 30 seconds
+        runtime = Value('d',60)                 # Runs for 30 seconds
 
         # Filter variables: extra zeros are for padding in filter
         a1 = manager.list([0,0,0,0,0,0,0,0,0,0,0,0,0])
         a2 = manager.list([0,0,0,0,0,0,0])
 
         # Specifying where the signal is coming from
-        sig = arduino(portName, baudrate)       # For arduino live signal
-        #sig = csv(directory)             # For preloaded data
+        #sig = arduino(portName, baudrate)       # For arduino live signal
+        sig = csv(directory)             # For preloaded data
 
         
         # Parallel process set up
