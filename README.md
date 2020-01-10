@@ -1,4 +1,4 @@
 # HRV
 Heart Rate Variability Analysis Tool
 
-![Alt text](Figures/ECG filter.png "Live Figure of ECG Signal")
+![Alt text](Figures/ECG filtering.png)
