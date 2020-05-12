@@ -7,8 +7,6 @@ keen analytics library is implemented to design the dashboard.
 
 ![](https://github.com/HRVpad/HRV/blob/master/Software/Dashboard/GUI_template.PNG?raw=true)
 
-\n
-\n
 
 
 **Live ECG Signal Acquisition and Processing**
