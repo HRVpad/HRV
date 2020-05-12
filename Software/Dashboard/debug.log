@@ -2,3 +2,5 @@
 [0329/034611.744:ERROR:exception_snapshot_win.cc(98)] thread ID 2484 not found in process
 [0329/034611.779:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
 [0329/034611.779:ERROR:exception_snapshot_win.cc(98)] thread ID 13916 not found in process
+[0427/231423.518:ERROR:process_info.cc(359)] UncheckedAllocate
+[0427/231423.522:ERROR:process_info.cc(359)] UncheckedAllocate
